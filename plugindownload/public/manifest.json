@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Download Videos Extension",
+  "description": "React Chrome Extension to dowlonad videos",
+  "author": "gabroval@hotmail.com",
+  "version":"1.0.0",
+  "action": {
+      "default_popup": "index.html",
+      "default_title": "Open"
+  },
+  "permissions": [
+      "scripting"
+  ]
+}
