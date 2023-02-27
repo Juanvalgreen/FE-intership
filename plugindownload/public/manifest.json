@@ -9,6 +9,6 @@
       "default_title": "Open"
   },
   "permissions": [
-      "scripting"
+      "scripting", "activeTab","tabs", "storage"
   ]
 }
