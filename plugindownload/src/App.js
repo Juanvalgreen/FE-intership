@@ -7,7 +7,6 @@ import './App.css';
 const chrome = window.chrome;
 
 function App() {
-  let idVideo;
   const options = {
     method: 'GET',
     headers: {
@@ -17,7 +16,9 @@ function App() {
   };
 
   const [currentUrl,setCurrentUrl]=React.useState('');
-  const [resultUrl,setResultUrl]=React.useState('')
+  // const [idVideo,setIdVideo]=React.useState('');
+  const [resultData,setResultData]=React.useState(null);
+
   
 
 
@@ -31,24 +32,26 @@ function App() {
   
   
   
-  React.useEffect((idVideo) => {
-    idVideo=getYouTubeID(currentUrl);
-    fetch(`https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id=${idVideo}`, options)
+  React.useEffect(() => {
+    const videoId=getYouTubeID(currentUrl);
+    // setIdVideo(videoId);
+    fetch(`https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id=${videoId}`, options)
     .then(res => res.json())
-    .then(data => setResultUrl(data.formats[2].url))
+    .then(data => setResultData(data))
     .catch(err => console.error(err));
     
     
-  }, [idVideo,currentUrl,options]);
+  }, [currentUrl]);
   
-  console.log(resultUrl);
-  console.log(idVideo)
+  console.log(resultData);
+  // console.log(idVideo);
 
   
 
   
   
-
+  const urlId=resultData?.formats?.[2]?.url;
+  const titleVideo=resultData?.title;
 
 
 
@@ -59,8 +62,8 @@ function App() {
         <h1 >React Youtube DownLoader</h1>
       </header>
       <div className="app--downloader">
-        <p> {currentUrl} </p>
-        <button> <a target='_blank' rel='noreferrer' href={resultUrl}> Download Video </a></button>
+        <p> {titleVideo} </p>
+        <button> <a target='_blank' rel='noreferrer' href={urlId}> Download Video </a></button>
       </div>
     </div>
   );

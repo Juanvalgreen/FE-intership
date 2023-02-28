@@ -10,5 +10,6 @@
   },
   "permissions": [
       "scripting", "activeTab","tabs", "storage"
-  ]
+  ],
+  "icons": {"16":"./download.png"}
 }
