@@ -1,7 +1,9 @@
 # FE-intership
-Assigment for FE intersgi un dubdub.ia
+Assigment for FE intersgi in dubdub.ia
+
 Plugin for google chrome.
-Juan Andres Valverde
+
+Juan Andres Valverde.
 
 
 # Instructions
