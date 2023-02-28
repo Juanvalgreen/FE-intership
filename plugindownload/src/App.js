@@ -62,8 +62,8 @@ function App() {
         <h1 >React Youtube DownLoader</h1>
       </header>
       <div className="app--downloader">
-        <p> {titleVideo} </p>
-        <button> <a target='_blank' rel='noreferrer' href={urlId}> Download Video </a></button>
+        {currentUrl.includes("youtube") && <p> {titleVideo} </p>}
+        {currentUrl.includes("youtube") ? <button> <a target='_blank' rel='noreferrer' href={urlId}> Download Video </a></button> : <p>This is not a youtube Video</p>}
       </div>
     </div>
   );

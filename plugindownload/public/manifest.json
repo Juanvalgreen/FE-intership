@@ -11,5 +11,5 @@
   "permissions": [
       "scripting", "activeTab","tabs", "storage"
   ],
-  "icons": {"16":"./download.png"}
+  "icons": {"16":"./download.png", "128":"./download.png"}
 }
